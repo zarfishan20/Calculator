@@ -8,24 +8,20 @@
 
     <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Share&display=swap');
+
         html,body {
             height: 100%;
         }
 
         body{
             background-color: beige;
-            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2b2b2b+61,2b2b2b+61,111111+67,2c2c2c+73,2c2c2c+73,000000+79,000000+83,1c1c1c+91,131313+100 */
-background: #4c4c4c; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2b2b2b 61%, #2b2b2b 61%, #111111 67%, #2c2c2c 73%, #2c2c2c 73%, #000000 79%, #000000 83%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 61%,#2b2b2b 61%,#111111 67%,#2c2c2c 73%,#2c2c2c 73%,#000000 79%,#000000 83%,#1c1c1c 91%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 61%,#2b2b2b 61%,#111111 67%,#2c2c2c 73%,#2c2c2c 73%,#000000 79%,#000000 83%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
         }
 
         .calculator{
 
-            background-color: #353535;
+            background-color: #e7e6e6;
             width: 300px;
             padding: 15px;
             position: absolute;
@@ -37,6 +33,76 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
             box-shadow: 0 5px 0 #a1a1a1, 0 8px 10px rgba(0, 0, 0, 0.75);
         }
 
+
+        .result{
+
+            background-color: #a1a1a1;
+            text-align: right;
+            margin: 8px 0 20px 10px;
+            width: 90%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            padding-right: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), inset 0 2px 0 black;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+
+        ul li{
+            list-style: none;
+            background-color: rgb(47, 48, 48);
+            color: white;
+            padding: 10px;
+            width: 15%;
+            float: left;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 0 #636161, inset 0 2px 0 #f1e9e9;
+            font-family: 'Share', cursive;
+        }
+
+        ul li:active {
+
+            position: relative;
+            top: 5px;
+            box-shadow: none;
+        }
+
+        ul li:nth-child(16){
+
+            height: 75px;
+            line-height: 75px;
+        
+        }
+
+        ul li:last-child{
+
+            margin-top: -45px;
+            width: 65%;
+        }
+
+        .signature {
+            
+            color: black;
+            text-align:right;
+            font-size: 0.75rem;
+            position: relative;
+            top: 4px;
+            right: 8px;
+            z-index: -1;
+            font-family: 'Share', cursive;
+            
+        }
+
     </style>
 
 
@@ -44,8 +110,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 <body>
     <div class="calculator">
 
-        <div>
-            Results are going to go here
+        <div class="result">
+            0
         </div>
 
         <ul>
@@ -81,6 +147,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 
    <script>
 
+    const lis = document.querySelectorAll("ul li");
+    lis.forEach((node) => {
+
+        node.addEventListener('mousedown',function(event){
+
+            event.preventDefault();
+            const value = node.innerText.trim();
+            const $result = document.querySelector(".result");
+            $result.innerText = value;
+
+
+        })
+
+    })
 
 
    </script> 
