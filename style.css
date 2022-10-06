@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Share&display=swap');
+
+        html,body {
+            height: 100%;
+        }
+
+        body{
+            background-color: beige;
+
+        }
+
+        .calculator{
+
+            background-color: #e7e6e6;
+            width: 300px;
+            padding: 15px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 0 #a1a1a1, 0 8px 10px rgba(0, 0, 0, 0.75);
+        }
+
+
+        .result{
+
+            background-color: #a1a1a1;
+            text-align: right;
+            margin: 8px 0 20px 10px;
+            width: 90%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            padding-right: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), inset 0 2px 0 black;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+
+        ul li{
+            list-style: none;
+            background-color: rgb(47, 48, 48);
+            color: white;
+            padding: 10px;
+            width: 15%;
+            float: left;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 0 #636161, inset 0 2px 0 #f1e9e9;
+            font-family: 'Share', cursive;
+        }
+
+        ul li:active {
+
+            position: relative;
+            top: 5px;
+            box-shadow: none;
+        }
+
+        ul li:nth-child(16){
+
+            height: 75px;
+            line-height: 75px;
+        
+        }
+
+        ul li:last-child{
+
+            margin-top: -45px;
+            width: 65%;
+        }
+
+        .signature {
+            
+            color: black;
+            text-align:right;
+            font-size: 0.75rem;
+            position: relative;
+            top: 4px;
+            right: 8px;
+            z-index: -1;
+            font-family: 'Share', cursive;
+            
+        }
